@@ -25,6 +25,7 @@ body {
     background-color: var(--color-cream);
     color: var(--color-black);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -52,6 +53,11 @@ img {
     display: block;
 }
 
+/* Utility Classes */
+.section {
+    padding: 4rem 0;
+}
+
 /* ==========================================================================
    Buttons
    ========================================================================== */
@@ -62,6 +68,7 @@ img {
     font-weight: 600;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
 }
 
 .btn-primary {
@@ -102,6 +109,8 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    flex-wrap: wrap; /* Responsive wrapping */
+    gap: 1rem;
 }
 
 .logo a {
@@ -115,6 +124,7 @@ img {
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap; /* Responsive wrapping */
 }
 
 .main-nav ul {
@@ -123,6 +133,7 @@ img {
     gap: 1.5rem;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* Responsive wrapping */
 }
 
 .main-nav a {
@@ -130,6 +141,10 @@ img {
     color: var(--color-black);
     font-weight: 500;
     transition: color 0.3s ease;
+}
+
+.main-nav a.btn-cta {
+    color: var(--color-white); /* Fix contrast issue */
 }
 
 .main-nav a:hover,
@@ -166,6 +181,7 @@ img {
 .hero-content h1 {
     font-size: clamp(2rem, 5vw, 4rem);
     margin-bottom: 1rem;
+    word-wrap: break-word; /* Prevent overflow */
 }
 
 .hero-content p {
@@ -199,18 +215,26 @@ img {
 
 @media (min-width: 768px) {
     .services-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
         gap: 3rem;
     }
 }
 
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    }
+}
+
 .service-item {
-    text-align: left; /* Clean reference style */
+    text-align: center; /* Match reference */
 }
 
 .service-icon {
     color: var(--color-dark-forest);
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .service-icon svg {
@@ -253,7 +277,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-    color: var(--color-orange);
+    color: var(--color-black); /* Match reference */
     margin-bottom: 0.5rem;
 }
 
@@ -268,4 +292,253 @@ img {
     object-fit: cover;
     border-radius: 12px;
     background-color: var(--color-sage); /* Fallback */
+}
+
+/* ==========================================================================
+   Testimonials Section
+   ========================================================================== */
+.testimonials h2 {
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column mobile */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns desktop */
+    }
+}
+
+.testimonial-card {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    color: var(--color-orange);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes customer info to bottom, keeping heights equal */
+    word-wrap: break-word; /* Prevent overflow */
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-sage);
+    flex-shrink: 0;
+}
+
+.customer-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.customer-name {
+    font-weight: 700;
+    color: var(--color-dark-forest);
+}
+
+.customer-category {
+    font-size: 0.875rem;
+    color: var(--color-muted-text);
+}
+
+.disclaimer {
+    font-size: 0.875rem;
+    color: var(--color-muted-text);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+.cta {
+    position: relative;
+    padding: 6rem 0;
+    background-color: var(--color-dark-forest); /* Fallback */
+    background-image: url('../assets/images/cta-coffee.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 59, 43, 0.85); /* Dark forest with opacity */
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    color: var(--color-orange);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin: 1rem 0;
+}
+
+.cta-content p {
+    color: var(--color-sage);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.cta-form {
+    display: flex;
+    flex-direction: column; /* Stacked on narrow screens */
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .cta-form {
+        flex-direction: row; /* Inline on wider screens */
+    }
+}
+
+.cta-form input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-sage);
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; /* Ensure full width on mobile */
+}
+
+@media (min-width: 576px) {
+    .cta-form input {
+        width: auto;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    background-color: var(--color-dark-forest);
+    color: var(--color-white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked on mobile */
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr; /* 3 columns on desktop */
+    }
+}
+
+.footer-brand .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: var(--color-sage);
+}
+
+.footer-brand a {
+    color: var(--color-orange);
+    text-decoration: none;
+}
+
+.footer h3 {
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer ul a {
+    color: var(--color-sage);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul a:hover,
+.footer ul a:focus {
+    color: var(--color-orange);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(220, 230, 207, 0.2); /* Sage with opacity */
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: var(--color-sage);
+    font-size: 0.875rem;
 }
