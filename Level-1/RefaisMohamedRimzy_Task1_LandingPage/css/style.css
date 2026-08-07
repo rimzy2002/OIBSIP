@@ -158,49 +158,88 @@ img {
 .hero {
     display: grid;
     grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .hero {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        height: 540px;
+        min-height: 540px;
     }
 }
 
 .hero-left {
-    background-color: var(--color-sage);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding: 4rem 2rem;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 3.5rem 1.5rem;
+    background-color: var(--color-sage);
 }
 
-.hero-content {
-    max-width: 500px;
+@media (min-width: 769px) {
+    .hero-left {
+        padding: clamp(3rem, 6vw, 6rem);
+    }
 }
 
-.hero-content h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin-bottom: 1rem;
+.hero-left h1 {
+    max-width: 580px;
+    margin: 0;
+    font-size: clamp(2.4rem, 11vw, 3.5rem);
+    line-height: 1.03;
+    letter-spacing: -0.03em;
     word-wrap: break-word; /* Prevent overflow */
 }
 
-.hero-content p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
+@media (min-width: 769px) {
+    .hero-left h1 {
+        font-size: clamp(3rem, 5vw, 4.5rem);
+    }
+}
+
+.hero-left p {
+    max-width: 500px;
+    margin: 1.5rem 0 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--color-dark-forest);
 }
 
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0.95rem 1.5rem;
+}
+
 .hero-right {
-    display: flex;
     width: 100%;
+    height: 300px;
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--color-coffee-brown);
+}
+
+@media (min-width: 769px) {
+    .hero-right {
+        height: 540px;
+    }
 }
 
 .hero-image {
+    display: block;
     width: 100%;
     height: 100%;
-    min-height: 400px;
+    max-width: none;
     object-fit: cover;
-    background-color: var(--color-sage); /* Fallback */
+    object-position: center 55%;
 }
 
 /* ==========================================================================
