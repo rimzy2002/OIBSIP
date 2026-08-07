@@ -186,3 +186,86 @@ img {
     object-fit: cover;
     background-color: var(--color-sage); /* Fallback */
 }
+
+/* ==========================================================================
+   Services Section
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+.service-item {
+    text-align: left; /* Clean reference style */
+}
+
+.service-icon {
+    color: var(--color-dark-forest);
+    margin-bottom: 1rem;
+}
+
+.service-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.service-item h3 {
+    margin-bottom: 0.75rem;
+}
+
+.service-item p {
+    margin: 0;
+}
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+.about {
+    background-color: var(--color-white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+}
+
+.label {
+    display: inline-block;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--color-orange);
+    margin-bottom: 0.5rem;
+}
+
+.about-image-wrapper {
+    width: 100%;
+}
+
+.about-image {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: var(--color-sage); /* Fallback */
+}
