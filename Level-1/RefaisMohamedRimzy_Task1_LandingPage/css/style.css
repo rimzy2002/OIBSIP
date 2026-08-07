@@ -385,7 +385,7 @@ img {
     position: relative;
     padding: 6rem 0;
     background-color: var(--color-dark-forest); /* Fallback */
-    background-image: url('../assets/images/cta-coffee.jpg');
+    background-image: url('../assets/images/coffee_bean_background.jpg');
     background-size: cover;
     background-position: center;
     color: var(--color-white);
