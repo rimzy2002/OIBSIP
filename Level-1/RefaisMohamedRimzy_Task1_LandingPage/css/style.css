@@ -1,5 +1,53 @@
-/* Basic styling for Landing Page */
+/* CSS Custom Properties */
+:root {
+    --color-dark-forest: #2f3b2b;
+    --color-sage: #dce6cf;
+    --color-cream: #faf9f4;
+    --color-orange: #e99a18;
+    --color-coffee-brown: #4b2b20;
+    --color-black: #111111;
+    --color-muted-text: #555555;
+    --color-white: #ffffff;
+}
+
+/* Box-sizing Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Body Reset & Basic Typography */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-dark-forest);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+p {
+    color: var(--color-muted-text);
+}
+
+/* Reusable Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Basic Image Responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
