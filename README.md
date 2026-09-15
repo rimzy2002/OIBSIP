@@ -15,11 +15,14 @@ This repository fulfills **100% of Level 1** by delivering all **3 tasks**:
 
 ## 📌 Projects Directory & Summary
 
-| Level | Task | Project Name | Tech Stack | Source Folder | Status |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Level-1** | **Task 1** | **EcoBrew Landing Page** | HTML5, CSS3 (Flexbox, Grid) | [RefaisMohamedRimzy_Task1_LandingPage](./Level-1/RefaisMohamedRimzy_Task1_LandingPage/) | ✅ **Completed** |
-| **Level-1** | **Task 2** | **Personal Portfolio Website** | HTML5, CSS3, JavaScript (Vanilla) | [RefaisMohamedRimzy_Task2_Portfolio](./Level-1/RefaisMohamedRimzy_Task2_Portfolio/) | ✅ **Completed** |
-| **Level-1** | **Task 3** | **ThermoSphere Temperature Converter** | HTML5, CSS3, JavaScript (Vanilla) | [RefaisMohamedRimzy_Task3_TemperatureConverter](./Level-1/RefaisMohamedRimzy_Task3_TemperatureConverter/) | ✅ **Completed** |
+| Level | Task | Project Name | Tech Stack | Source Folder | Live Demo | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Level-1** | **Task 1** | **EcoBrew Landing Page** | HTML5, CSS3 (Flexbox, Grid) | [RefaisMohamedRimzy_Task1_LandingPage](./Level-1/RefaisMohamedRimzy_Task1_LandingPage/) | [Live Demo](https://rimzy2002.github.io/OIBSIP/Level-1/RefaisMohamedRimzy_Task1_LandingPage/) | ✅ **Completed** |
+| **Level-1** | **Task 2** | **Personal Portfolio Website** | HTML5, CSS3, JavaScript (Vanilla) | [RefaisMohamedRimzy_Task2_Portfolio](./Level-1/RefaisMohamedRimzy_Task2_Portfolio/) | [Live Demo](https://rimzy2002.github.io/OIBSIP/Level-1/RefaisMohamedRimzy_Task2_Portfolio/) | ✅ **Completed** |
+| **Level-1** | **Task 3** | **ThermoSphere Temperature Converter** | HTML5, CSS3, JavaScript (Vanilla) | [RefaisMohamedRimzy_Task3_TemperatureConverter](./Level-1/RefaisMohamedRimzy_Task3_TemperatureConverter/) | [Live Demo](https://rimzy2002.github.io/OIBSIP/Level-1/RefaisMohamedRimzy_Task3_TemperatureConverter/) | ✅ **Completed** |
+
+> 🌐 **Interactive Projects Portal**: Launch the all-in-one live web hub at [https://rimzy2002.github.io/OIBSIP/](https://rimzy2002.github.io/OIBSIP/)
+
 
 ---
 

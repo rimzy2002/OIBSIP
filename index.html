@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oasis Infobyte Web Development and Designing Internship (OIBSIP) - Level 1 Projects Portal by Refais Mohamed Rimzy.">
+    <title>OIBSIP Projects Portal | Oasis Infobyte — Refais Mohamed Rimzy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #080c16;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(99, 102, 241, 0.4);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --primary: #6366f1;
+            --cyan: #06b6d4;
+            --emerald: #10b981;
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .ambient-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(160px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+        }
+        .glow-1 { top: -150px; left: 20%; background: radial-gradient(circle, #6366f1 0%, transparent 70%); }
+        .glow-2 { bottom: -150px; right: 10%; background: radial-gradient(circle, #06b6d4 0%, transparent 70%); }
+
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(8, 12, 22, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .brand-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: var(--cyan);
+        }
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .github-link:hover {
+            color: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4.5rem 0 3rem;
+            text-align: center;
+        }
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--emerald);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--emerald);
+            box-shadow: 0 0 10px var(--emerald);
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Projects Grid */
+        .projects-section {
+            padding-bottom: 5rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(16px);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-glow);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(99, 102, 241, 0.2);
+        }
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+        .task-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.75rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 9999px;
+            color: var(--cyan);
+        }
+        .card-icon {
+            font-size: 1.75rem;
+        }
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.75rem;
+        }
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.65rem 1.15rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+            flex: 1;
+        }
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-subtle);
+            padding: 2.5rem 0;
+            text-align: center;
+            background: #050810;
+        }
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer-credit {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .hero-title {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">
+                <span>&lt;OIBSIP/&gt;</span>
+                <span class="brand-badge">Level 1 Complete</span>
+            </a>
+            <a href="https://github.com/rimzy2002/OIBSIP" target="_blank" rel="noopener noreferrer" class="github-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>GitHub Repo</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                <span>Oasis Infobyte Internship Track: Web Development & Designing</span>
+            </div>
+            <h1 class="hero-title">
+                Level 1 Project Showcase <span class="gradient-text">(All 3 Tasks Complete)</span>
+            </h1>
+            <p class="hero-subtitle">
+                Developed by <strong>Refais Mohamed Rimzy</strong> for the <strong>Oasis Infobyte Internship Program (OIBSIP)</strong>. Explore live demonstrations and source code for all required tasks.
+            </p>
+        </section>
+
+        <section class="projects-section">
+            <div class="projects-grid">
+                <!-- Task 1 -->
+                <article class="project-card">
+                    <div class="card-top">
+                        <span class="task-badge">Task 1 · Landing Page</span>
+                        <span class="card-icon">☕</span>
+                    </div>
+                    <h2 class="card-title">EcoBrew Landing Page</h2>
+                    <p class="card-desc">
+                        A visually polished static landing page for an ethical, carbon-neutral coffee subscription. Built using semantic HTML5 and modern CSS3 Grid & Flexbox layouts.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">Flexbox</span>
+                        <span class="tag">CSS Grid</span>
+                        <span class="tag">Responsive</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="./Level-1/RefaisMohamedRimzy_Task1_LandingPage/index.html" class="btn btn-primary">
+                            <span>Live Demo</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                        <a href="https://github.com/rimzy2002/OIBSIP/tree/main/Level-1/RefaisMohamedRimzy_Task1_LandingPage" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </article>
+
+                <!-- Task 2 -->
+                <article class="project-card">
+                    <div class="card-top">
+                        <span class="task-badge">Task 2 · Personal Portfolio</span>
+                        <span class="card-icon">💻</span>
+                    </div>
+                    <h2 class="card-title">Personal Portfolio Website</h2>
+                    <p class="card-desc">
+                        A full personal developer portfolio with custom vector avatar, categorized skills grid, featured project showcase cards, journey timeline, and interactive contact form.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">IntersectionObserver</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="./Level-1/RefaisMohamedRimzy_Task2_Portfolio/index.html" class="btn btn-primary">
+                            <span>Live Demo</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                        <a href="https://github.com/rimzy2002/OIBSIP/tree/main/Level-1/RefaisMohamedRimzy_Task2_Portfolio" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </article>
+
+                <!-- Task 3 -->
+                <article class="project-card">
+                    <div class="card-top">
+                        <span class="task-badge">Task 3 · Temperature Converter</span>
+                        <span class="card-icon">🌡️</span>
+                    </div>
+                    <h2 class="card-title">ThermoSphere Converter</h2>
+                    <p class="card-desc">
+                        Interactive temperature converter converting between Celsius, Fahrenheit, and Kelvin with simultaneous all-unit calculations, absolute zero safety alerts, and animated thermal gauge.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Real-Time</span>
+                        <span class="tag">Thermal Gauge</span>
+                    </div>
+                    <div class="card-actions">
+                        <a href="./Level-1/RefaisMohamedRimzy_Task3_TemperatureConverter/index.html" class="btn btn-primary">
+                            <span>Live Demo</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                        <a href="https://github.com/rimzy2002/OIBSIP/tree/main/Level-1/RefaisMohamedRimzy_Task3_TemperatureConverter" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024–2026 <strong>Refais Mohamed Rimzy</strong> · Web Development & Designing Intern</p>
+            <p class="footer-credit">Built as part of the <strong>Oasis Infobyte Internship Program (OIBSIP)</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>
