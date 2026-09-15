@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio of Refais Mohamed Rimzy - Full-Stack Web Developer and UI/UX Designer. Built for Oasis Infobyte Web Development Internship Task 2.">
+    <meta name="keywords" content="Refais Mohamed Rimzy, Web Developer, Portfolio, Frontend, Full Stack, Oasis Infobyte, OIBSIP">
+    <meta name="author" content="Refais Mohamed Rimzy">
+    <title>Refais Mohamed Rimzy | Web Developer & Designer Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Background Decorative Gradients -->
+    <div class="bg-glow glow-top" aria-hidden="true"></div>
+    <div class="bg-glow glow-bottom" aria-hidden="true"></div>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="header">
+        <div class="container nav-container">
+            <a href="#hero" class="brand-logo" aria-label="Refais Mohamed Rimzy Portfolio Home">
+                <span class="logo-accent">&lt;</span>Rimzy<span class="logo-accent">/&gt;</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-outline nav-cta">Get In Touch</a>
+                <!-- Mobile Hamburger Toggle -->
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobileDrawer">
+            <ul class="mobile-nav-list">
+                <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+                <li><a href="#about" class="mobile-nav-link">About</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+                <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-drawer-footer">
+                <a href="#contact" class="btn btn-primary btn-block mobile-contact-btn">Let's Connect</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero / Profile Section -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="status-badge">
+                        <span class="pulse-dot"></span>
+                        <span>Available for Opportunities</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Building Digital Experiences that <span class="gradient-text">Inspire & Perform</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Hello, I'm <strong class="text-white">Refais Mohamed Rimzy</strong>, an enthusiastic Full-Stack Web Developer and UI/UX Designer dedicated to building responsive, accessible, and high-performance digital products.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-social-links">
+                        <span class="social-label">Follow & Connect:</span>
+                        <div class="social-icons">
+                            <a href="https://github.com/rimzy2002" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="https://linkedin.com/company/oasis-infobyte" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </a>
+                            <a href="mailto:rimzy2002rr@gmail.com" class="social-btn" aria-label="Send Email">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="avatar-card">
+                        <div class="avatar-wrapper">
+                            <!-- High Quality Modern Developer Avatar SVG -->
+                            <svg class="developer-avatar" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="avatarBg" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#1e1b4b"/>
+                                        <stop offset="1" stop-color="#0f172a"/>
+                                    </linearGradient>
+                                    <linearGradient id="skinTone" x1="120" y1="60" x2="120" y2="150" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#f5d0b5"/>
+                                        <stop offset="1" stop-color="#e2b998"/>
+                                    </linearGradient>
+                                    <linearGradient id="jacketGrad" x1="60" y1="160" x2="180" y2="240" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#6366f1"/>
+                                        <stop offset="1" stop-color="#4f46e5"/>
+                                    </linearGradient>
+                                    <linearGradient id="hoodieGrad" x1="80" y1="150" x2="160" y2="230" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#06b6d4"/>
+                                        <stop offset="1" stop-color="#0284c7"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="240" height="240" rx="120" fill="url(#avatarBg)"/>
+                                <circle cx="120" cy="120" r="110" stroke="rgba(99, 102, 241, 0.4)" stroke-width="2"/>
+                                <!-- Shoulders and Clothes -->
+                                <path d="M40 240C40 185 75 160 120 160C165 160 200 185 200 240H40Z" fill="url(#jacketGrad)"/>
+                                <path d="M85 160L120 220L155 160H85Z" fill="url(#hoodieGrad)"/>
+                                <polygon points="120,155 95,190 145,190" fill="#0f172a"/>
+                                <!-- Neck -->
+                                <rect x="106" y="130" width="28" height="30" rx="8" fill="#e2b998"/>
+                                <!-- Face -->
+                                <ellipse cx="120" cy="100" rx="38" ry="44" fill="url(#skinTone)"/>
+                                <!-- Hair -->
+                                <path d="M78 95C76 65 92 48 120 48C148 48 164 65 162 95C158 72 145 62 120 62C95 62 82 72 78 95Z" fill="#1e1b2e"/>
+                                <path d="M82 68C85 52 100 42 120 42C140 42 155 52 158 68C152 58 138 52 120 52C102 52 88 58 82 68Z" fill="#0f172a"/>
+                                <!-- Eyes & Eyebrows -->
+                                <rect x="100" y="85" width="12" height="3" rx="1.5" fill="#334155"/>
+                                <rect x="128" y="85" width="12" height="3" rx="1.5" fill="#334155"/>
+                                <circle cx="106" cy="95" r="4" fill="#0f172a"/>
+                                <circle cx="134" cy="95" r="4" fill="#0f172a"/>
+                                <circle cx="107" cy="94" r="1.5" fill="#ffffff"/>
+                                <circle cx="135" cy="94" r="1.5" fill="#ffffff"/>
+                                <!-- Glasses Frame -->
+                                <rect x="94" y="88" width="22" height="15" rx="4" fill="none" stroke="#6366f1" stroke-width="2.5"/>
+                                <rect x="124" y="88" width="22" height="15" rx="4" fill="none" stroke="#6366f1" stroke-width="2.5"/>
+                                <line x1="116" y1="94" x2="124" y2="94" stroke="#6366f1" stroke-width="2.5"/>
+                                <!-- Nose & Smile -->
+                                <path d="M118 102Q120 108 123 108" stroke="#d49b78" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M109 118Q120 126 131 118" stroke="#c4785a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+
+                        <!-- Floating Tech Badges -->
+                        <div class="floating-badge badge-1">
+                            <span class="badge-icon">⚡</span>
+                            <span class="badge-text">Frontend & UI</span>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <span class="badge-icon">☕</span>
+                            <span class="badge-text">MERN Stack</span>
+                        </div>
+                        <div class="floating-badge badge-3">
+                            <span class="badge-icon">🚀</span>
+                            <span class="badge-text">Oasis Intern</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Metrics Banner -->
+            <div class="container hero-metrics">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <span class="metric-number">Level 1</span>
+                        <span class="metric-label">Web Dev Track Complete</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">3+</span>
+                        <span class="metric-label">Internship Tasks Delivered</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">100%</span>
+                        <span class="metric-label">Responsive & Semantic</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-number">OIBSIP</span>
+                        <span class="metric-label">Oasis Infobyte Verified</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="section about-section" id="about">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">About Me</span>
+                    <h2 class="section-title">Passionate About Crafting Seamless Web Experiences</h2>
+                    <p class="section-subtitle">A glimpse into my background, development philosophy, and the goals that drive my work.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text-card">
+                        <h3 class="about-heading">Hello World, I'm Refais Mohamed Rimzy</h3>
+                        <p class="about-bio">
+                            I am a driven software developer currently participating in the <strong>Oasis Infobyte Web Development and Designing Internship</strong>. With a foundation rooted in web standards, I specialize in transforming conceptual ideas into fully interactive, accessible, and high-performance applications.
+                        </p>
+                        <p class="about-bio">
+                            My journey spans modern frontend engineering using semantic HTML5, fluid responsive CSS3, and JavaScript, alongside full-stack explorations with the MERN stack (MongoDB, Express, React, Node.js). I thrive on clean architecture, intuitive user interfaces, and writing maintainable code.
+                        </p>
+                        <p class="about-bio">
+                            When I am not coding or debugging, I constantly explore modern UI/UX design trends, emerging cloud technologies, and contribute to developer communities.
+                        </p>
+
+                        <div class="about-details-list">
+                            <div class="detail-item">
+                                <span class="detail-label">Name:</span>
+                                <span class="detail-value">Refais Mohamed Rimzy</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Internship:</span>
+                                <span class="detail-value">Oasis Infobyte (OIBSIP)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Track:</span>
+                                <span class="detail-value">Web Development & Designing</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Email:</span>
+                                <span class="detail-value"><a href="mailto:rimzy2002rr@gmail.com">rimzy2002rr@gmail.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            </div>
+                            <h4>Modern Architecture</h4>
+                            <p>Designing modular, scalable codebases with semantic HTML5 and clean CSS structure.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <h4>Responsive Layouts</h4>
+                            <p>Mobile-first UI/UX engineering with CSS Flexbox, CSS Grid, and fluid typography.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                            </div>
+                            <h4>Speed & Performance</h4>
+                            <p>Optimized asset loading, smooth micro-animations, and zero unnecessary bloat.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </div>
+                            <h4>User-Centric Mindset</h4>
+                            <p>Prioritizing accessibility (a11y), contrast guidelines, and seamless human experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section skills-section" id="skills">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Technical Stack</span>
+                    <h2 class="section-title">Tools, Languages & Frameworks</h2>
+                    <p class="section-subtitle">A comprehensive view of the technologies I utilize to build modern digital products.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Frontend Category -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon icon-cyan">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div>
+                                <h3>Frontend Development</h3>
+                                <p class="category-desc">Crafting responsive and interactive client interfaces</p>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-pill">HTML5 (Semantic)</span>
+                            <span class="skill-pill">CSS3 (Grid & Flexbox)</span>
+                            <span class="skill-pill">JavaScript (ES6+)</span>
+                            <span class="skill-pill">React.js</span>
+                            <span class="skill-pill">DOM Manipulation</span>
+                            <span class="skill-pill">Responsive Design</span>
+                            <span class="skill-pill">Accessibility (a11y)</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & Database Category -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon icon-indigo">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                            </div>
+                            <div>
+                                <h3>Backend & Storage</h3>
+                                <p class="category-desc">Server-side logic, API endpoints, and databases</p>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-pill">Node.js</span>
+                            <span class="skill-pill">Express.js</span>
+                            <span class="skill-pill">RESTful APIs</span>
+                            <span class="skill-pill">MongoDB & Mongoose</span>
+                            <span class="skill-pill">SQL & SQLite</span>
+                            <span class="skill-pill">JWT Authentication</span>
+                            <span class="skill-pill">CRUD Operations</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Workflow Category -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon icon-purple">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            </div>
+                            <div>
+                                <h3>Tools & Environment</h3>
+                                <p class="category-desc">Modern developer tooling and deployment workflows</p>
+                            </div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-pill">Git & GitHub</span>
+                            <span class="skill-pill">VS Code</span>
+                            <span class="skill-pill">Chrome DevTools</span>
+                            <span class="skill-pill">Postman API</span>
+                            <span class="skill-pill">Figma UI/UX</span>
+                            <span class="skill-pill">npm / Vite</span>
+                            <span class="skill-pill">GitHub Pages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Portfolio Showcase</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">Real-world applications built with clean code and modern web design principles.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: EcoBrew Landing Page (Task 1) -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <div class="project-overlay">
+                                <span class="project-tag">Oasis Infobyte Task 1</span>
+                            </div>
+                            <div class="project-preview-mockup ecobrew-preview">
+                                <div class="mockup-bar">
+                                    <span class="mock-dot red"></span>
+                                    <span class="mock-dot yellow"></span>
+                                    <span class="mock-dot green"></span>
+                                    <span class="mock-title">ecobrew.coffee</span>
+                                </div>
+                                <div class="mockup-body">
+                                    <div class="mock-banner">
+                                        <h4>Ethical Coffee, Delivered Carbon-Neutral</h4>
+                                        <p>Freshly roasted sustainable subscription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3 class="project-title">EcoBrew — Ethical Coffee Landing Page</h3>
+                                <span class="project-level-badge">Level 1 · Task 1</span>
+                            </div>
+                            <p class="project-desc">
+                                A visually polished, responsive static landing page for an ethical coffee subscription brand. Features a sticky header, hero callout, sustainable service cards, story section, and testimonial showcase.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-item">HTML5</span>
+                                <span class="tech-item">CSS3 Flexbox</span>
+                                <span class="tech-item">CSS Grid</span>
+                                <span class="tech-item">Responsive Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="../RefaisMohamedRimzy_Task1_LandingPage/index.html" class="btn btn-sm btn-primary" target="_blank">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Live Preview</span>
+                                </a>
+                                <a href="https://github.com/rimzy2002/OIBSIP/tree/main/Level-1/RefaisMohamedRimzy_Task1_LandingPage" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>Source Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Temperature Converter (Task 3) -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <div class="project-overlay">
+                                <span class="project-tag">Oasis Infobyte Task 3</span>
+                            </div>
+                            <div class="project-preview-mockup thermosphere-preview">
+                                <div class="mockup-bar">
+                                    <span class="mock-dot red"></span>
+                                    <span class="mock-dot yellow"></span>
+                                    <span class="mock-dot green"></span>
+                                    <span class="mock-title">thermosphere.app</span>
+                                </div>
+                                <div class="mockup-body">
+                                    <div class="mock-temp-display">
+                                        <div class="mock-temp-val">100 °C = 212 °F</div>
+                                        <div class="mock-temp-meter"><span class="mock-meter-fill"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3 class="project-title">ThermoSphere — Smart Temperature Converter</h3>
+                                <span class="project-level-badge">Level 1 · Task 3</span>
+                            </div>
+                            <p class="project-desc">
+                                An interactive temperature conversion web utility converting between Celsius, Fahrenheit, and Kelvin. Features real-time multi-unit output cards, strict numeric validation, and absolute zero boundary handling.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-item">HTML5</span>
+                                <span class="tech-item">CSS3</span>
+                                <span class="tech-item">JavaScript (Vanilla)</span>
+                                <span class="tech-item">Real-time Validation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="../RefaisMohamedRimzy_Task3_TemperatureConverter/index.html" class="btn btn-sm btn-primary" target="_blank">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Live Preview</span>
+                                </a>
+                                <a href="https://github.com/rimzy2002/OIBSIP/tree/main/Level-1/RefaisMohamedRimzy_Task3_TemperatureConverter" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>Source Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: MERN Stack Cloud Store -->
+                    <article class="project-card">
+                        <div class="project-media">
+                            <div class="project-overlay">
+                                <span class="project-tag">Full-Stack Application</span>
+                            </div>
+                            <div class="project-preview-mockup mern-preview">
+                                <div class="mockup-bar">
+                                    <span class="mock-dot red"></span>
+                                    <span class="mock-dot yellow"></span>
+                                    <span class="mock-dot green"></span>
+                                    <span class="mock-title">devstore-platform.io</span>
+                                </div>
+                                <div class="mockup-body">
+                                    <div class="mock-dashboard-grid">
+                                        <span class="dash-block w-40"></span>
+                                        <span class="dash-block w-60"></span>
+                                        <span class="dash-block w-100"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-header">
+                                <h3 class="project-title">CloudCommerce — Full-Stack Web Platform</h3>
+                                <span class="project-level-badge">Full Stack</span>
+                            </div>
+                            <p class="project-desc">
+                                A comprehensive full-stack e-commerce solution with token authentication, catalog filtering, cart management, and seamless order checkout workflows.
+                            </p>
+                            <div class="project-tech-stack">
+                                <span class="tech-item">React.js</span>
+                                <span class="tech-item">Node.js</span>
+                                <span class="tech-item">Express</span>
+                                <span class="tech-item">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/rimzy2002" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                    <span>Project Demo</span>
+                                </a>
+                                <a href="https://github.com/rimzy2002" class="btn btn-sm btn-outline" target="_blank" rel="noopener noreferrer">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                    <span>GitHub Repo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Internship Timeline -->
+        <section class="section experience-section" id="experience">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Career & Growth</span>
+                    <h2 class="section-title">Internship & Experience</h2>
+                    <p class="section-subtitle">Milestones achieved during hands-on projects and internships.</p>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-role">Web Development & Designing Intern</span>
+                                <span class="timeline-period">Current</span>
+                            </div>
+                            <h3 class="timeline-org">Oasis Infobyte (OIBSIP)</h3>
+                            <p class="timeline-text">
+                                Actively executing tasks in the Web Development track under Level 1. Delivered high-standard landing pages, dynamic personal portfolio architectures, and responsive utility applications following strict web standards and Git conventions.
+                            </p>
+                            <div class="timeline-badges">
+                                <span class="badge-tag">Frontend Architecture</span>
+                                <span class="badge-tag">UI/UX Polish</span>
+                                <span class="badge-tag">Git Workflow</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-role">Self-Directed Full-Stack Developer</span>
+                                <span class="timeline-period">2023 – Present</span>
+                            </div>
+                            <h3 class="timeline-org">MERN Stack & Cloud Engineering</h3>
+                            <p class="timeline-text">
+                                Architected multiple full-stack prototypes, mastering state management, API design, MongoDB modeling, modern component-driven architectures, and continuous deployment pipelines.
+                            </p>
+                            <div class="timeline-badges">
+                                <span class="badge-tag">React.js</span>
+                                <span class="badge-tag">Node.js / Express</span>
+                                <span class="badge-tag">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Get In Touch</span>
+                    <h2 class="section-title">Let's Discuss Your Next Project</h2>
+                    <p class="section-subtitle">Whether you have an inquiry, collaboration opportunity, or feedback, my inbox is always open.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Cards -->
+                    <div class="contact-info-panel">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </div>
+                            <div>
+                                <h4 class="info-title">Email</h4>
+                                <p class="info-value"><a href="mailto:rimzy2002rr@gmail.com">rimzy2002rr@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="info-title">GitHub</h4>
+                                <p class="info-value"><a href="https://github.com/rimzy2002" target="_blank" rel="noopener noreferrer">github.com/rimzy2002</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                            </div>
+                            <div>
+                                <h4 class="info-title">LinkedIn</h4>
+                                <p class="info-value"><a href="https://linkedin.com/company/oasis-infobyte" target="_blank" rel="noopener noreferrer">Oasis Infobyte Community</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h4 class="info-title">Location & Availability</h4>
+                                <p class="info-value">Remote Worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Contact Form -->
+                    <div class="contact-form-panel">
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="contactName" class="form-label">Full Name</label>
+                                <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. John Doe" required>
+                                <span class="error-msg" id="nameError">Please enter your name</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">Email Address</label>
+                                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g. john@example.com" required>
+                                <span class="error-msg" id="emailError">Please enter a valid email address</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="e.g. Internship Opportunity / Collaboration" required>
+                                <span class="error-msg" id="subjectError">Please provide a subject</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea id="contactMessage" name="message" rows="5" class="form-input form-textarea" placeholder="Write your message here..." required></textarea>
+                                <span class="error-msg" id="messageError">Please enter your message</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                                <span>Send Message</span>
+                                <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+
+                            <div class="form-alert success-alert" id="formSuccessAlert" role="alert">
+                                Thank you! Your message has been sent successfully. I will get back to you soon.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="#hero" class="brand-logo">
+                    <span class="logo-accent">&lt;</span>Rimzy<span class="logo-accent">/&gt;</span>
+                </a>
+                <p class="footer-tagline">Crafting modern, accessible, and responsive web products.</p>
+            </div>
+
+            <div class="footer-links-group">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024–2026 Refais Mohamed Rimzy. All rights reserved.</p>
+                <p class="footer-credit">Built as part of the <strong>Oasis Infobyte Internship Program (OIBSIP)</strong>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

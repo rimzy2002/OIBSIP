@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ThermoSphere - Smart Temperature Converter Tool. Convert seamlessly between Celsius, Fahrenheit, and Kelvin with real-time validation and visual thermal gauge. Built for Oasis Infobyte Task 3.">
+    <meta name="keywords" content="Temperature Converter, Celsius, Fahrenheit, Kelvin, Oasis Infobyte, OIBSIP, Web Development">
+    <meta name="author" content="Refais Mohamed Rimzy">
+    <title>ThermoSphere | Smart Temperature Converter</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-moderate">
+
+    <!-- Ambient Glow Orbs -->
+    <div class="thermal-glow thermal-glow-primary" id="glowPrimary" aria-hidden="true"></div>
+    <div class="thermal-glow thermal-glow-secondary" id="glowSecondary" aria-hidden="true"></div>
+
+    <!-- Header / Navbar -->
+    <header class="app-header">
+        <div class="header-container">
+            <a href="#" class="app-brand">
+                <span class="brand-icon">🌡️</span>
+                <span class="brand-title">ThermoSphere</span>
+                <span class="brand-badge">v1.0</span>
+            </a>
+            <div class="header-tagline">
+                <span>Oasis Infobyte · Level 1, Task 3</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="converter-wrapper">
+        <div class="converter-card" id="converterCard">
+            <!-- App Card Header -->
+            <div class="card-header">
+                <div class="card-badge">Instant Precision Converter</div>
+                <h1 class="card-title">Temperature Converter</h1>
+                <p class="card-subtitle">Convert between Celsius, Fahrenheit, and Kelvin with real-time calculations and physical limit safety checks.</p>
+            </div>
+
+            <!-- Absolute Zero Warning Banner -->
+            <div class="alert-banner alert-warning" id="absoluteZeroAlert" role="alert">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <strong>Absolute Zero Violation:</strong>
+                    <p id="absoluteZeroMsg">The value entered is below absolute zero (0 K / −273.15°C / −459.67°F). In physics, temperatures below absolute zero cannot exist under standard thermodynamic conditions.</p>
+                </div>
+            </div>
+
+            <!-- Error Banner -->
+            <div class="alert-banner alert-error" id="errorAlert" role="alert">
+                <div class="alert-icon">❌</div>
+                <div class="alert-content">
+                    <strong>Invalid Input:</strong>
+                    <p id="errorMsg">Please enter a valid numeric temperature value (e.g., 25, -10.5, 98.6).</p>
+                </div>
+            </div>
+
+            <!-- Converter Form Controls -->
+            <div class="converter-body">
+                <div class="input-selection-grid">
+                    <!-- Numeric Input Field -->
+                    <div class="field-group">
+                        <label for="tempInput" class="field-label">Temperature Value</label>
+                        <div class="input-box">
+                            <input 
+                                type="text" 
+                                id="tempInput" 
+                                class="temp-input" 
+                                placeholder="Enter value..." 
+                                value="25"
+                                autocomplete="off"
+                                inputmode="decimal"
+                            >
+                            <button type="button" class="btn-clear" id="btnClear" title="Clear input" aria-label="Clear input">✕</button>
+                        </div>
+                        <span class="input-hint">Numbers and decimals allowed (e.g. -40, 37.5)</span>
+                    </div>
+
+                    <!-- Input Unit Selection -->
+                    <div class="field-group">
+                        <label class="field-label">Source Unit</label>
+                        <div class="unit-selector" role="radiogroup" aria-label="Select source temperature unit">
+                            <label class="unit-pill">
+                                <input type="radio" name="sourceUnit" value="C" checked>
+                                <span class="pill-content">
+                                    <span class="pill-symbol">°C</span>
+                                    <span class="pill-name">Celsius</span>
+                                </span>
+                            </label>
+
+                            <label class="unit-pill">
+                                <input type="radio" name="sourceUnit" value="F">
+                                <span class="pill-content">
+                                    <span class="pill-symbol">°F</span>
+                                    <span class="pill-name">Fahrenheit</span>
+                                </span>
+                            </label>
+
+                            <label class="unit-pill">
+                                <input type="radio" name="sourceUnit" value="K">
+                                <span class="pill-content">
+                                    <span class="pill-symbol">K</span>
+                                    <span class="pill-name">Kelvin</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button Row -->
+                <div class="actions-row">
+                    <button type="button" class="btn btn-convert" id="btnConvert">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        <span>Convert Now</span>
+                    </button>
+                    <button type="button" class="btn btn-reset" id="btnReset">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                        <span>Reset</span>
+                    </button>
+                </div>
+
+                <!-- Quick Presets -->
+                <div class="presets-section">
+                    <span class="presets-label">Common Benchmarks:</span>
+                    <div class="presets-pills">
+                        <button type="button" class="preset-btn" data-val="-273.15" data-unit="C">❄️ Absolute Zero (-273.15°C)</button>
+                        <button type="button" class="preset-btn" data-val="0" data-unit="C">🧊 Freezing Point (0°C)</button>
+                        <button type="button" class="preset-btn" data-val="21" data-unit="C">🏡 Room Temp (21°C)</button>
+                        <button type="button" class="preset-btn" data-val="37" data-unit="C">🌡️ Body Temp (37°C)</button>
+                        <button type="button" class="preset-btn" data-val="100" data-unit="C">🔥 Boiling Point (100°C)</button>
+                    </div>
+                </div>
+
+                <!-- Simultaneous Multi-Unit Results Section -->
+                <div class="results-section">
+                    <div class="results-header">
+                        <h2 class="results-title">Conversion Outputs (Simultaneous)</h2>
+                        <span class="status-indicator" id="thermalStatusBadge">Moderate (Room Temperature)</span>
+                    </div>
+
+                    <div class="output-cards-grid">
+                        <!-- Celsius Card -->
+                        <div class="output-card" id="cardCelsius">
+                            <div class="output-header">
+                                <span class="unit-flag flag-c">Celsius</span>
+                                <span class="unit-code">°C</span>
+                            </div>
+                            <div class="output-value-wrapper">
+                                <span class="output-value" id="valCelsius">25.00</span>
+                                <span class="output-unit-symbol">°C</span>
+                            </div>
+                            <div class="output-formula">
+                                <span class="formula-label">Formula:</span>
+                                <span class="formula-text" id="formulaCelsius">Base measurement</span>
+                            </div>
+                        </div>
+
+                        <!-- Fahrenheit Card -->
+                        <div class="output-card highlight" id="cardFahrenheit">
+                            <div class="output-header">
+                                <span class="unit-flag flag-f">Fahrenheit</span>
+                                <span class="unit-code">°F</span>
+                            </div>
+                            <div class="output-value-wrapper">
+                                <span class="output-value" id="valFahrenheit">77.00</span>
+                                <span class="output-unit-symbol">°F</span>
+                            </div>
+                            <div class="output-formula">
+                                <span class="formula-label">Formula:</span>
+                                <span class="formula-text" id="formulaFahrenheit">(25 × 9/5) + 32</span>
+                            </div>
+                        </div>
+
+                        <!-- Kelvin Card -->
+                        <div class="output-card" id="cardKelvin">
+                            <div class="output-header">
+                                <span class="unit-flag flag-k">Kelvin</span>
+                                <span class="unit-code">K</span>
+                            </div>
+                            <div class="output-value-wrapper">
+                                <span class="output-value" id="valKelvin">298.15</span>
+                                <span class="output-unit-symbol">K</span>
+                            </div>
+                            <div class="output-formula">
+                                <span class="formula-label">Formula:</span>
+                                <span class="formula-text" id="formulaKelvin">25 + 273.15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animated Thermal Gauge Visualizer -->
+                <div class="thermal-visualizer">
+                    <div class="visualizer-header">
+                        <span class="vis-title">Thermal Spectrum Meter</span>
+                        <span class="vis-indicator-text" id="visStatusText">Warm / Comfortable</span>
+                    </div>
+                    <div class="gauge-track">
+                        <div class="gauge-fill" id="gaugeFill" style="width: 48%;"></div>
+                        <div class="gauge-marker marker-freezing" style="left: 20%;" title="Freezing (0°C)">
+                            <span class="marker-line"></span>
+                            <span class="marker-label">0°C</span>
+                        </div>
+                        <div class="gauge-marker marker-body" style="left: 45%;" title="Body Temp (37°C)">
+                            <span class="marker-line"></span>
+                            <span class="marker-label">37°C</span>
+                        </div>
+                        <div class="gauge-marker marker-boiling" style="left: 80%;" title="Boiling (100°C)">
+                            <span class="marker-line"></span>
+                            <span class="marker-label">100°C</span>
+                        </div>
+                    </div>
+                    <div class="gauge-scales">
+                        <span>Absolute Zero (−273.15°C)</span>
+                        <span>Freezing</span>
+                        <span>Room</span>
+                        <span>Boiling (100°C)</span>
+                        <span>Extreme</span>
+                    </div>
+                </div>
+
+                <!-- Mathematical Formulas Reference Box -->
+                <div class="formulas-card">
+                    <h3 class="formulas-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        <span>Conversion Formulas Reference</span>
+                    </h3>
+                    <div class="formulas-grid">
+                        <div class="formula-item">
+                            <strong>Celsius to Fahrenheit:</strong>
+                            <code>°F = (°C × 9/5) + 32</code>
+                        </div>
+                        <div class="formula-item">
+                            <strong>Fahrenheit to Celsius:</strong>
+                            <code>°C = (°F − 32) × 5/9</code>
+                        </div>
+                        <div class="formula-item">
+                            <strong>Celsius to Kelvin:</strong>
+                            <code>K = °C + 273.15</code>
+                        </div>
+                        <div class="formula-item">
+                            <strong>Kelvin to Celsius:</strong>
+                            <code>°C = K − 273.15</code>
+                        </div>
+                        <div class="formula-item">
+                            <strong>Fahrenheit to Kelvin:</strong>
+                            <code>K = (°F − 32) × 5/9 + 273.15</code>
+                        </div>
+                        <div class="formula-item">
+                            <strong>Kelvin to Fahrenheit:</strong>
+                            <code>°F = (K − 273.15) × 9/5 + 32</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Footer -->
+            <div class="card-footer">
+                <p>Designed and Built by <strong>Refais Mohamed Rimzy</strong> for <strong>Oasis Infobyte (OIBSIP)</strong></p>
+                <div class="footer-links">
+                    <a href="../RefaisMohamedRimzy_Task1_LandingPage/index.html">Task 1: Landing Page</a>
+                    <span class="sep">•</span>
+                    <a href="../RefaisMohamedRimzy_Task2_Portfolio/index.html">Task 2: Personal Portfolio</a>
+                    <span class="sep">•</span>
+                    <a href="https://github.com/rimzy2002/OIBSIP" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/converter.js"></script>
+</body>
+</html>
